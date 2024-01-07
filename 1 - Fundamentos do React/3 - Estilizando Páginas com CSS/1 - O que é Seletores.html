@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h2{
+            font-size: 32px;
+            color: red;
+        }
+
+        .red{
+            color: red;
+        }
+
+        #email{
+            border: 0;
+            background-color: #569876;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulário</h2>
+    <div>
+        <form action="" method="get">
+            <div>
+                <label for="nome" class="red">Nome:</label>
+                <!-- <br> -->
+                <input type="text" id="nome" name="nome">
+            </div>
+            <br>
+            <div>
+                <label for="email">E-mail:</label>
+                <!-- <br> -->
+                <input type="email" id="email" name="email">
+            </div>
+            <br>
+            <div>
+                <label for="msg">Mensagem:</label>
+                <br>
+                <textarea id="msg" name="mensagem" class="red"></textarea>
+            </div>
+            <br>
+            <div>
+                <button>Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
