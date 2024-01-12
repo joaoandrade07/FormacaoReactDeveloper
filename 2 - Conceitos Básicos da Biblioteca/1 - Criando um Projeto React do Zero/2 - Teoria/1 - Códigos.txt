@@ -1,0 +1,60 @@
+Primeiro inicie o projeto: npm init || npm init -y ( para iniciar direto sem perguntar nada)
+
+Segundo, adicione as dependencias do babel: npm add @babel/core @babel/preset-env @babel/preset-react babel-loader -D
+
+Terceiro, faça o arquivo .babelrc e coloque as configurações dele
+    {
+        "presets": [
+            "@babel/preset-env",
+            ["@babel/preset-react", {"runtime":"automatic"}]
+        ]
+    }
+
+Quarto, instale as dependencias do webpack: npm add html-loader html-webpack-plugin webpack webpack-cli webpack-dev-server style-loader css-loader file-loader -D
+
+Quinto, faça o arquivo webpack.config.js e coloque as configurações dele
+    const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+    module.exports = {
+        devtool: "source-map",
+        entry: "./src/index.js",
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {loader: "babel-loader"}
+                },
+                {
+                    test: /\.html$/,
+                    use: [{loader: "html-loader"}]
+                },
+                {
+                    test: /\.css$/,
+                    use: ["style-loader", "css-loader"]
+                },
+                {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    use: ["file-loader"]
+                }
+            ]
+        },
+        resolve: {
+            extensions: [".js", ".jsx"],
+        },
+        plugins: [
+            new HtmlWebPackPlugin({
+                template: "./public/index.html",
+            }),
+        ],
+    };
+
+Sexto, adicione o react e o react-dom: npm add react react-dom -D
+
+Sétimo, crie as pastas public e src
+
+Oitavo, crie o arquivo index.html na pasta public
+
+Nono, crie o arquivo index.js na pasta src
+
+Decimo, crie os componentes e de andamento ao seu projeto

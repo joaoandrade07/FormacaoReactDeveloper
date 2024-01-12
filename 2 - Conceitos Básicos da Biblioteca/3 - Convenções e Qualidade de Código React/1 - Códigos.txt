@@ -1,0 +1,37 @@
+Primeiro, vamos instalar a extenção e o proprio eslint no projeto: npm install eslint -D
+
+Segundo, vamos dar um :npx eslint --init
+
+Terceiro, após a instalação vamos responder algumas perguntas que ele faz
+
+Quarto, após as perguntas vamos instalar mais algumas dependencias do eslint
+
+Quinto, vamos mudar um codigo em "rules" no arquivo de config do eslint
+    "rules":{
+        "react/react-in-jsx-scope":"off"
+    }
+
+Sexto, instalar o prettier: npm install eslint-config-prettier eslint-plugin-prettier prettier -D
+
+Setimo, vamos mudar um código em "extends" no arquivo de config do eslint
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ]
+
+Oitavo, criar o arquivo .prettierrc e colocar algumas configs
+    {
+        "semi":true,
+        "tabWidth": 4,
+        "printWidth": 100,
+        "singleQuote: true,
+        "trailingComma": "none",
+        "jsxBracketSameLine": true
+    }
+
+Nono, criar o aquivo .editorconfig e colocar algumas configs
+    root=true
+    end_of_line = lf
+    insert_final_newline = true
+    indent_siza = 4
